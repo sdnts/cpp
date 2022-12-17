@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "command": "bazel",
+      "args": ["build", "//:cpp"],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "build:release",
+      "command": "bazel",
+      "args": ["build", "--nokeep_state_after_build", "//:cpp"],
+      "options": {
+        "cwd": "${fileDirname}"
+      }
+    },
+    {
+      "label": "build:debug",
+      "hide": true,
+      "command": "bazel",
+      "args": [
+        "build",
+        "-c",
+        "dbg",
+        "--strip=never",
+        "--features=oso_prefix_is_pwd",
+        "//:cpp"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      }
+    },
+    {
+      "label": "run",
+      "type": "cppbuild",
+      "command": "bazel",
+      "args": ["run", "//:cpp"],
+      "options": {
+        "cwd": "${fileDirname}"
+      }
+    }
+  ]
+}

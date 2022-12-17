@@ -1,0 +1,14 @@
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "Bazel",
+      "configurationProvider": "BazelBuild.vscode-bazel",
+      "macFrameworkPath": ["/System/Library/Frameworks", "/Library/Frameworks"],
+      "intelliSenseMode": "macos-clang-arm64",
+      "compilerPath": "/usr/bin/clang",
+      "cppStandard": "c++20",
+      "compileCommands": "${workspaceFolder}/compile_commands.json"
+    }
+  ]
+}
