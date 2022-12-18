@@ -23,8 +23,13 @@ Build & run tests:
 bazel test :cpp_test
 ```
 
-Generate compile_commands.json (for Intellisense)
+You'll want to change the project/target names etc. in the `BUILD` file.
+
+Generate compile_commands.json (for Intellisense). For now, this is a manual step
+every time you add a new library / translation unit.
 
 ```sh
 bazel run @hcc//:refresh_all
 ```
+
+Also remember to switch the `LICENSE` to something more restrictive if necessary.
